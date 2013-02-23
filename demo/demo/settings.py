@@ -31,6 +31,7 @@ LANGUAGES = (
     ('pt', ugettext('Portugese')),
     ('pt-br', ugettext('Brazilian Portuguese')),
     ('es', ugettext('Spanish')),
+    ('el', ugettext('Greek')),
 )
 LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, 'locale'),
@@ -81,6 +82,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'userena.middleware.UserenaLocaleMiddleware',
 )
 
@@ -148,3 +150,6 @@ LOGGING = {
 
 # Needed for Django guardian
 ANONYMOUS_USER_ID = -1
+
+# Test runner
+TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
